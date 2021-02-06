@@ -1,0 +1,19 @@
+type Error {
+  field: String!
+  message: String!
+}
+
+type Query {
+  hello(name: String): String!
+}
+
+type Mutation {
+  register(
+    firstName: String!
+    lastName: String!
+    email: String!
+    password: String!
+  ): [Error!]
+
+  login(email: String!, password: String!): [Error!]
+}
